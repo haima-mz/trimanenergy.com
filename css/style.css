@@ -12,13 +12,15 @@ Description: Constra - Construction Html5 Template
 ================================================== */
 
 :root {
-  --primary: #111827;   /* Dark Charcoal */
-  --accent: #D4AF37;    /* Gold */
-  --secondary: #ffffff; /* White */
-  --secondary-grey: #f3f4f6; /* Subtle grey */
-  --text-dark: #1f2937;
-  --text-light: #6b7280;
+  --primary: #0B1F3A;   /* Dark Charcoal #111827; */
+  --accent: #14B8A6;    /* Gold #D4AF37;*/
+  --highlight: #3B82F6;
+  --secondary: #ffffff; /* White #ffffff;*/
+  --secondary-grey: #f3f4f6; /* Subtle grey #f3f4f6;*/
+  --text-dark: #0f172a;   /* #1f2937;*/
+  --text-light: #6b7280;  /* #6b7280;*/
 }
+
 
 body {
   background: var(--secondary);
@@ -126,7 +128,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #000;
+  color: var(--highlight);
 }
 
 a.read-more {
@@ -380,12 +382,12 @@ blockquote {
   margin: 20px 0;
   background: #f9f9f9;
   position: relative;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--highlight);
   padding-left: 40px;
 }
 
 blockquote.text-center {
-  border-top: 3px solid var(--accent);
+  border-top: 3px solid var(--highlight);
   border-left: 0;
   padding-left: 25px;
   padding-top: 50px;
@@ -399,7 +401,7 @@ blockquote.text-center:before {
 }
 
 blockquote.text-right {
-  border-right: 3px solid var(--accent);
+  border-right: 3px solid var(--highlight);
   padding-right: 40px;
   border-left: 0;
   padding-left: 25px;
@@ -543,7 +545,7 @@ a[href^=tel] {
 .btn-primary:hover,
 .btn-dark:hover,
 .btn-white.btn-primary:hover {
-  background: var(--primary);
+  background: var(--highlight);
   color: #fff;
 }
 
@@ -647,7 +649,7 @@ ul.top-info li p.info-text {
 }
 
 .top-social ul li a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 /* Top bar border */
@@ -680,6 +682,7 @@ ul.top-info li p.info-text {
 .header-one,
 .header-one .site-navigation {
   background: var(--primary);
+  color: #fff;
 }
 
 .header-one .navbar-collapse {
@@ -1214,7 +1217,7 @@ ul.navbar-nav > li > a {
 }
 
 .header-get-a-quote .btn-primary:hover {
-  background: #272d33;
+  background: var(--highlight);
   color: var(--accent) !important;
 }
 
@@ -1370,11 +1373,11 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 
 .slider.border {
   background: none;
-  border: 2px solid var(--accent) !important;
+  border: 2px solid var(--highlight) !important;
 }
 
 .slider.border:hover {
-  background: var(--accent);
+  background: var(--highlight);
   border: 2px solid transparent;
 }
 
@@ -1747,7 +1750,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 }
 
 .service-box-title a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 /* Service box bg */
@@ -2026,7 +2029,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 }
 
 .shuffle-item .project-img-container .project-item-info-content .project-item-title a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 .shuffle-item .project-img-container .project-item-info-content .project-cat {
@@ -2046,7 +2049,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 }
 
 .general-btn .btn-primary:hover {
-  background: #000;
+  background: var(--highlight);
 }
 
 /* Project owl */
@@ -2434,7 +2437,7 @@ img.testimonial-thumb {
 }
 
 .latest-post .post-title a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 .latest-post-meta {
@@ -2451,7 +2454,7 @@ img.testimonial-thumb {
 /*- Footer common */
 .footer {
   background-color: var(--primary);
-  color: #9ca3af;
+  color: #fff;
 }
 
 .footer-main {
@@ -2466,7 +2469,7 @@ img.testimonial-thumb {
   padding-left: 15px;
   text-transform: uppercase;
   color: #fff;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--highlight);
 }
 
 /* Footer about us */
@@ -2560,7 +2563,7 @@ img.testimonial-thumb {
 }
 
 .footer-menu ul li a:hover {
-  color: #fff;
+  color: var(--highlight);
 }
 
 #back-to-top {
@@ -2591,7 +2594,7 @@ img.testimonial-thumb {
   line-height: 36px;
   background: var(--accent);
   border-radius: 3px;
-  color: #000;
+  color: #fff;
   font-weight: 700;
   font-size: 16px;
   padding: 0;
@@ -2607,6 +2610,7 @@ img.testimonial-thumb {
 }
 
 #back-to-top .btn.btn-primary:hover {
+  background: var(--highlight);
   color: #fff;
 }
 
@@ -2674,7 +2678,7 @@ img.testimonial-thumb {
 .breadcrumb .breadcrumb-item,
 .breadcrumb li a:focus,
 .breadcrumb li a:hover {
-  color: var(--accent) !important;
+  color: var(--highlight) !important;
 }
 
 .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
@@ -3057,7 +3061,7 @@ label {
 }
 
 .entry-header .entry-title a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 .post-single .entry-header .entry-title {
@@ -3074,7 +3078,7 @@ label {
 }
 
 .post-meta a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 .post-meta span {
@@ -3117,7 +3121,7 @@ label {
 .pagination > .active > a,
 .pagination > .active > a:hover,
 .pagination > li > a:hover {
-  color: #fff;
+  color: var(--highlight);
   background: var(--accent);
   border: 1px solid transparent;
 }
@@ -3138,7 +3142,7 @@ label {
 }
 
 .post-tags a:hover {
-  background: var(--accent);
+  background: var(--highlight);
   color: #fff;
   border: 1px solid transparent;
 }
@@ -3357,7 +3361,7 @@ label {
 }
 
 .sidebar .widget ul li a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 .sidebar .widget ul li i {
@@ -3463,7 +3467,7 @@ label {
 }
 
 .widget.recent-posts .post-info .entry-title a:hover {
-  color: var(--accent);
+  color: var(--highlight);
 }
 
 .widget.recent-posts .post-date {
@@ -3488,7 +3492,7 @@ label {
 }
 
 .sidebar .widget-tags ul > li a:hover {
-  background: var(--accent);
+  background: var(--highlight);
   color: #fff;
   border: 1px solid transparent;
 }
