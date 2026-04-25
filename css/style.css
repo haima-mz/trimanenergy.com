@@ -469,7 +469,7 @@ ul.list-arrow li:before {
   content: "\f105";
   margin-right: 10px;
   color: var(--accent);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -1765,6 +1765,24 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   color: #fff;
 }
 
+.service-content {
+  display: none;
+}
+
+.service-content.active {
+  display: block;
+}
+
+.service-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-content.active {
+  display: block;
+  opacity: 1;
+}
 /* Service box 
 
 .ts-service-box .ts-service-icon i {
