@@ -32,12 +32,12 @@ Description: Constra - Construction Html5 Template
 body {
   background: var(--bg-light);
   color: var(--text-light);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 body,
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased !important;
   line-height: 26px;
