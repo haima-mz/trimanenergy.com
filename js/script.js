@@ -119,7 +119,7 @@ jQuery(function ($) {
 
 
 		// banner-carousel
-		function bannerCarouselOne() {
+		/* function bannerCarouselOne() {
 			$('.banner-carousel.banner-carousel-1').slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,
@@ -132,11 +132,11 @@ jQuery(function ($) {
 			});
 			$('.banner-carousel.banner-carousel-1').slickAnimation();
 		}
-		bannerCarouselOne();
+		bannerCarouselOne(); */
 
 
 		// banner Carousel Two
-		function bannerCarouselTwo() {
+		/* function bannerCarouselTwo() {
 			$('.banner-carousel.banner-carousel-2').slick({
 				fade: true,
 				slidesToShow: 1,
@@ -149,7 +149,7 @@ jQuery(function ($) {
 				nextArrow: '<button type="button" class="carousel-control right" aria-label="carousel-control"><i class="fas fa-chevron-right"></i></button>'
 			});
 		}
-		bannerCarouselTwo();
+		bannerCarouselTwo(); */
 
 
 		// pageSlider
@@ -258,6 +258,17 @@ jQuery(function ($) {
 			});
 		}
 		mediaPopup();
+		
+
+		$('.hero-text-slider').slick({
+    			autoplay: true,
+    			autoplaySpeed: 5000,
+    			arrows: false,
+    			dots: true,
+    			fade: true,
+    			speed: 800,
+    			pauseOnHover: false
+		});
 
 	});
 
