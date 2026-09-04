@@ -586,8 +586,9 @@ a[href^=tel] {
 ================================================== */
 .top-bar {
   padding: 8px 0;
-  background: var(--bg-light);
+  background: var(--primary);
   position: relative;
+  color: #fff;
 }
 
 /* Top info */
@@ -617,6 +618,7 @@ ul.top-info li p.info-text {
   line-height: normal;
   display: inline-block;
   flex-direction: column;
+  color: #fff;
 }
 
 /* Top social */
@@ -639,7 +641,7 @@ ul.top-info li p.info-text {
 }
 
 .top-social ul li a {
-  color: #2c2c2c;
+  color: #f2f2f2;
   font-size: 14px;
   transition: 400ms;
   padding: 9px 12px;
@@ -679,8 +681,8 @@ ul.top-info li p.info-text {
 .header-one,
 .site-navigation,
 .navbar {
-  background: var(--primary);
-  color: #fff;
+  background: var(--white);
+  color: var(--primary);
 }
 
 .header-one .navbar-collapse {
@@ -726,7 +728,7 @@ ul.top-info li p.info-text {
 }
 
 .navbar-nav .nav-link {
-  color: var(--white);
+  color: var(--primary) !important;
 }
 
 .navbar-nav .nav-link:hover,
@@ -736,7 +738,7 @@ ul.top-info li p.info-text {
 
 ul.navbar-nav > li > a {
   padding: 15px 0 !important;
-  color: #fff !important;
+  color: var(--primary) !important;
 }
 
 @media (max-width: 991px) {
@@ -2704,7 +2706,7 @@ img.testimonial-thumb {
 ========================================= */
 
 .hero-text-slider {
-    background-color: rgba(240, 248, 255, 0.40);
+    background-color: rgba(240, 248, 255, 0.60);
     padding: 30px 40px;
 
     max-width: 1100px;
