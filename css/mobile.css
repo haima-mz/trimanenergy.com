@@ -1,0 +1,1314 @@
+/*!------------------------------------------------------------------
+[MOBILE STYLESHEET]
+
+Load this AFTER style.css:
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+
+And make sure this is in <head> (nothing else works without it):
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+Breakpoints used: 1199px (small desktop), 991px (tablet / collapsed nav),
+767px (phone landscape), 575px (phone portrait), 400px (small phone).
+-------------------------------------------------------------------*/
+
+
+/* ==================================================================
+   0. GLOBAL SAFETY — stops the sideways scroll
+   ================================================================== */
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img,
+iframe,
+video,
+embed,
+object {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* Long words / URLs in blog posts breaking the grid */
+p,
+h1, h2, h3, h4, h5, h6,
+a,
+li {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+/* ==================================================================
+   1. THE ONE BUG THAT BREAKS EVERYTHING BELOW 1200px
+   style.css has: .site-navigation .container .row { margin-left: -194px; }
+   That pulls the whole nav row 194px off the left edge.
+   ================================================================== */
+
+@media (max-width: 1199px) {
+  .site-navigation .container .row {
+    margin-left: 0;
+  }
+}
+
+
+/* ==================================================================
+   2. TYPOGRAPHY — the desktop scale is far too large on a phone
+   ================================================================== */
+
+@media (max-width: 767px) {
+  body,
+  p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: -0.4px;
+  }
+
+  h3 {
+    font-size: 19px;
+    line-height: 28px;
+    margin-bottom: 15px;
+    letter-spacing: -0.2px;
+  }
+
+  h4 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .section-title {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .section-sub-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+
+  .dropcap {
+    font-size: 36px;
+    line-height: 44px;
+    margin-right: 12px;
+  }
+
+  blockquote {
+    padding: 20px 20px 20px 28px;
+  }
+}
+
+@media (max-width: 575px) {
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .section-sub-title {
+    font-size: 21px;
+    line-height: 29px;
+  }
+}
+
+
+/* ==================================================================
+   3. SPACING — 70px section padding eats the whole screen
+   ================================================================== */
+
+@media (max-width: 991px) {
+  section,
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  .ts-padding {
+    padding: 35px 25px;
+  }
+
+  .gap-60 { height: 40px; }
+  .gap-40 { height: 30px; }
+  .gap-30 { height: 20px; }
+}
+
+@media (max-width: 575px) {
+  section,
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  .ts-padding {
+    padding: 25px 20px;
+  }
+}
+
+
+/* ==================================================================
+   4. TOP BAR
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .top-bar {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  ul.top-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 18px;
+  }
+
+  ul.top-info li {
+    padding-right: 0;
+    line-height: 18px;
+    font-size: 13px;
+  }
+
+  ul.top-info li i {
+    font-size: 15px;
+  }
+
+  .top-social {
+    margin-top: 8px;
+  }
+
+  .top-social ul {
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .top-social ul li a {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  ul.top-info li p.info-text {
+    font-size: 12px;
+  }
+}
+
+
+/* ==================================================================
+   5. HEADER, LOGO & NAVIGATION
+   ================================================================== */
+
+@media (max-width: 991px) {
+
+  /* 100px logo is enormous on a phone */
+  .logo img {
+    height: 58px;
+  }
+
+  .header-one .logo-area {
+    padding: 8px 0;
+  }
+
+  .header-two {
+    padding: 8px 0;
+  }
+
+  .header-two .logo img {
+    height: 26px;
+  }
+
+  .header-right {
+    float: none;
+  }
+
+  /* Burger button: bigger tap target, aligned right */
+  .navbar > .container,
+  .navbar > .container-fluid {
+    position: relative;
+  }
+
+  .navbar-toggler {
+    float: none;
+    margin: 6px 0;
+    padding: 8px 11px;
+    border-radius: 3px;
+  }
+
+  /* Collapsed menu panel */
+  .navbar-collapse {
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
+    margin-top: 8px;
+    padding: 5px 0 10px;
+  }
+
+  .navbar-nav {
+    margin-bottom: 0;
+  }
+
+  ul.navbar-nav > li {
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  ul.navbar-nav > li:last-child {
+    border-bottom: 0;
+  }
+
+  /* style.css sets padding:1px — an unusable 14px tap target */
+  ul.navbar-nav > li > a,
+  .navbar-nav .nav-link {
+    padding: 13px 4px !important;
+    line-height: 20px;
+    font-size: 14px;
+    display: block;
+  }
+
+  /* Dropdowns inside the collapsed menu */
+  .dropdown-menu {
+    border-top: 0;
+    box-shadow: none;
+    background: var(--bg-light);
+    padding: 0 15px;
+    margin: 0 0 8px;
+  }
+
+  .dropdown-menu li a {
+    padding: 12px 0;
+    font-size: 12px;
+  }
+
+  .dropdown-submenu > .dropdown-menu {
+    left: 0;
+    margin-top: 0;
+  }
+
+  .dropdown-menu-large {
+    min-width: 100%;
+  }
+
+  /* Quote button: full width so it reads as a real CTA */
+  .header-get-a-quote {
+    padding: 12px 0 4px !important;
+  }
+
+  .header-get-a-quote .btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    padding: 13px 20px !important;
+  }
+}
+
+
+/* ------- Header info boxes (phone / email blocks) ------- */
+
+@media (max-width: 991px) {
+  ul.top-info-box {
+    float: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
+  ul.top-info-box li {
+    float: none;
+    flex: 1 1 auto;
+    border-right: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  ul.top-info-box li .info-box span.info-icon {
+    font-size: 17px;
+  }
+
+  ul.top-info-box li .info-box .info-box-title {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  ul.top-info-box li .info-box .info-box-subtitle {
+    font-size: 14px;
+  }
+
+  ul.top-info-box > li.nav-search {
+    padding-left: 0;
+    margin-left: 0;
+    flex: 0 0 100%;
+  }
+
+  ul.top-info-box > li.nav-search:before {
+    display: none;
+  }
+}
+
+
+/* ------- Search ------- */
+
+@media (max-width: 991px) {
+  .search-area {
+    min-height: 0;
+  }
+
+  .nav-search {
+    top: 14px;
+    right: 60px;
+  }
+
+  .search-block {
+    right: 15px;
+    left: 15px;
+    width: auto;
+  }
+
+  .search-block .form-control {
+    height: 44px;
+  }
+}
+
+
+/* ==================================================================
+   6. HERO / SLIDER / VIDEO BANNER
+   ================================================================== */
+
+@media (max-width: 991px) {
+
+  /* Fixed 700px slide + 40% left padding pushes text off screen */
+  .text-slide {
+    height: auto;
+    min-height: 420px;
+    padding: 40px 15px;
+  }
+
+  .slider-text {
+    display: block;
+    padding-left: 0;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .slider-text .slide-head {
+    font-size: 24px;
+  }
+
+  /* Absolutely positioned hero image just causes overflow on mobile */
+  .slider-img {
+    display: none;
+  }
+
+  .text-slide .content-box {
+    padding: 25px 20px;
+  }
+
+  .slide-title-box {
+    font-size: 14px;
+    line-height: 32px;
+    padding: 0 12px;
+  }
+
+  .slider.btn {
+    margin: 12px 4px 0;
+    padding: 11px 18px 9px;
+  }
+
+  /* Box slider */
+  .box-slider-content {
+    padding-left: 0;
+  }
+
+  .box-slider-text {
+    padding: 15px 18px;
+  }
+
+  /* Small page slider used on inner pages */
+  .page-slider.small-bg .item {
+    min-height: 220px;
+  }
+
+  .page-slider.small-bg .box-slider-content {
+    left: 0;
+    padding: 0 15px;
+  }
+
+  .page-slider.small-bg .box-slide-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .page-slider .carousel-control i {
+    width: 32px;
+    height: 54px;
+    line-height: 54px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .text-slide {
+    min-height: 340px;
+    padding: 30px 10px;
+  }
+
+  .text-slide .content-box {
+    padding: 20px 15px;
+  }
+
+  .slick-dots {
+    bottom: 10px;
+  }
+}
+
+
+/* ==================================================================
+   7. CALL TO ACTION / SUBSCRIBE / NEWSLETTER
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .call-to-action {
+    padding: 25px 20px;
+    text-align: center;
+  }
+
+  .call-to-action-title {
+    padding: 0 0 18px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* Negative top margin overlaps the section above on small screens */
+  .call-to-action-box {
+    margin-top: 0;
+  }
+
+  .call-to-action-box .action-style-box {
+    padding: 22px 20px;
+    text-align: center;
+  }
+
+  .action-title {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 15px;
+  }
+
+  .subscribe-call-to-acton {
+    padding: 25px 15px;
+    min-height: 0;
+    text-align: center;
+  }
+
+  .ts-newsletter {
+    padding: 20px 15px 25px;
+    min-height: 0;
+    text-align: center;
+  }
+
+  .ts-newsletter:after {
+    display: none;
+  }
+
+  .newsletter-form .input-group,
+  .newsletter-form .form-group {
+    width: 100%;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+    height: 46px;
+  }
+
+  .newsletter-form .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+
+/* ==================================================================
+   8. INTRO / FEATURED TABS / SERVICES / FACTS
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .ts-intro {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .into-sub-title {
+    font-size: 24px;
+  }
+
+  .featured-tab,
+  .tab-image-content {
+    padding-left: 0;
+  }
+
+  .featured-tab .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .featured-tab .nav-tabs > li {
+    flex: 1 1 auto;
+  }
+
+  .featured-tab .nav-tabs > li > a {
+    display: block;
+    text-align: center;
+    line-height: 42px;
+    padding: 0 16px;
+    margin: 0;
+    font-size: 13px;
+  }
+
+  /* The little triangle under the active tab misaligns when tabs wrap */
+  .featured-tab .nav-tabs > li.active > a:after {
+    display: none;
+  }
+
+  .featured-tab .tab-pane img.pull-left,
+  .featured-tab .tab-pane img.pull-right {
+    float: none !important;
+    display: block;
+    margin: 0 0 20px;
+    width: 100%;
+  }
+
+  .featured-tab .tab-icon i {
+    font-size: 120px;
+  }
+
+  .featured-tab .lead {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  /* Facts */
+  .ts-facts {
+    margin-bottom: 30px;
+  }
+
+  .ts-facts .ts-facts-icon i {
+    font-size: 34px;
+  }
+
+  .ts-facts .ts-facts-content .ts-facts-num {
+    font-size: 32px;
+    margin: 15px 0 10px;
+  }
+
+  .ts-facts .ts-facts-content .ts-facts-title {
+    font-size: 14px;
+  }
+
+  /* Service boxes */
+  .ts-service-box,
+  .ts-service-image-wrapper {
+    margin-bottom: 25px;
+  }
+
+  .ts-service-box .ts-service-box-content,
+  .tab-content .ts-service-box .ts-service-box-content {
+    margin-bottom: 20px;
+  }
+
+  .service-no {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 575px) {
+
+  /* Stack icon above text so the copy isn't squeezed into 60% width */
+  .ts-service-box.icon-left .ts-service-box-icon,
+  .ts-service-classic .ts-service-icon i {
+    float: none;
+  }
+
+  .ts-service-box.icon-left .ts-service-box-info,
+  .ts-service-classic .ts-service-box-info,
+  .ts-service-box-content .ts-service-box-info {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .ts-service-box .ts-service-icon i {
+    float: none;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .ts-service-box .ts-service-box-content,
+  .tab-content .ts-service-box .ts-service-box-content {
+    margin-left: 0;
+  }
+
+  .ts-service-info {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+}
+
+
+/* ==================================================================
+   9. PROJECTS / PORTFOLIO
+   Hover effects never fire on touch — show the overlay by default
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .shuffle-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 30px;
+    padding-bottom: 14px;
+    border-bottom-width: 2px;
+  }
+
+  .shuffle-btn-group label {
+    flex: 1 1 calc(50% - 8px);
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+
+  .shuffle-item .project-img-container:after {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+
+  .shuffle-item .project-img-container .project-item-info-content,
+  .shuffle-item .project-img-container .gallery-popup .gallery-icon {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+
+  .shuffle-item .project-img-container .project-item-info {
+    top: auto;
+    bottom: 20px;
+    margin-top: 0;
+    padding: 0 20px;
+  }
+
+  .shuffle-item .project-img-container .project-item-info-content .project-item-title {
+    font-size: 17px;
+  }
+
+  .owl-theme.project-slide {
+    margin-top: 40px;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 575px) {
+  .shuffle-btn-group label {
+    flex: 1 1 100%;
+  }
+}
+
+
+/* ==================================================================
+   10. TEAM — the slide-up panel is hover-only, so pin it open
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .ts-team-wrapper .ts-team-content,
+  .ts-team-wrapper:hover .ts-team-content {
+    position: static;
+    top: auto;
+    height: auto;
+    padding: 18px 20px;
+    background: var(--primary);
+  }
+
+  .ts-team-wrapper .ts-designation {
+    margin-bottom: 10px;
+  }
+
+  .team-slide .slick-slide {
+    margin-left: 15px;
+    padding-bottom: 55px;
+  }
+
+  .team-slide .slick-list {
+    margin-left: -15px;
+  }
+}
+
+
+/* ==================================================================
+   11. TESTIMONIALS
+   background-attachment:fixed is broken/janky on iOS & Android
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .testimonial-area {
+    padding: 55px 0;
+    background-attachment: scroll;
+    background-position: center center;
+  }
+
+  .quote-item .quote-text {
+    font-size: 15px;
+    padding: 0 20px 25px 45px;
+  }
+
+  .quote-item.quote-border .quote-text-border {
+    font-size: 16px;
+    line-height: 26px;
+    padding: 18px;
+  }
+
+  .quote-item-footer {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  img.testimonial-thumb {
+    float: none;
+    margin: 0 auto 12px;
+    display: block;
+  }
+
+  .quote-item-info {
+    display: block;
+    padding-top: 0;
+  }
+}
+
+
+/* ==================================================================
+   12. PRICING
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .ts-pricing-box {
+    margin: 12px 0;
+  }
+
+  .ts-pricing-box .ts-pricing-header {
+    padding: 24px 18px;
+  }
+
+  .ts-pricing-box .ts-pricing-price {
+    font-size: 34px;
+  }
+
+  .ts-pricing-box .ts-pricing-features ul > li {
+    padding: 14px 0;
+  }
+
+  .ts-pricing-box .plan-action {
+    padding-bottom: 28px;
+  }
+}
+
+
+/* ==================================================================
+   13. BLOG, COMMENTS & SIDEBAR
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .post {
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+  }
+
+  .entry-header .entry-title {
+    font-size: 19px;
+    line-height: 28px;
+  }
+
+  .post-single .entry-header .entry-title {
+    font-size: 22px;
+    line-height: 31px;
+  }
+
+  .post-meta span {
+    margin-right: 8px;
+    padding-right: 8px;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+
+  /* Author box stacks instead of squeezing the text into a sliver */
+  .author-box {
+    padding: 18px;
+    text-align: center;
+  }
+
+  .author-img img {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 15px;
+  }
+
+  .comments-list img.comment-avatar {
+    width: 52px;
+    height: 52px;
+    margin-right: 15px;
+  }
+
+  .comments-list .comment {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  .comments-reply {
+    margin-left: 20px;
+  }
+
+  .tags-area {
+    text-align: center;
+  }
+
+  .post-tags a,
+  .post-social-icons a i {
+    margin: 4px 3px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pagination li a {
+    margin: 0 4px 6px;
+  }
+
+  /* Sidebar drops below content — remove side offsets */
+  .sidebar-left .widget,
+  .sidebar-right .widget {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .sidebar {
+    margin-top: 40px;
+  }
+
+  .sidebar .widget {
+    margin-bottom: 30px;
+  }
+
+  .sidebar .widget.box {
+    padding: 20px;
+  }
+
+  .widget.recent-posts .posts-thumb img {
+    width: 72px;
+    height: 58px;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .comments-reply {
+    margin-left: 0;
+  }
+}
+
+
+/* ==================================================================
+   14. CONTACT & MAP
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .map,
+  .google-map iframe {
+    height: 300px;
+  }
+
+  .contact-info-box {
+    margin-top: 18px;
+  }
+
+  .contact-info-box-content {
+    padding-left: 38px;
+  }
+
+  .page-quote-form {
+    padding: 25px 20px 30px;
+  }
+
+  /* Negative margin designed for a desktop overlap */
+  .get-a-quote-img {
+    margin-bottom: 0;
+  }
+
+  .mrb-80 {
+    margin-bottom: 0;
+  }
+
+  /* Comfortable, non-zooming form fields (16px stops iOS auto-zoom) */
+  .form-control {
+    height: 48px;
+    font-size: 16px;
+  }
+
+  textarea.form-control {
+    height: auto;
+  }
+
+  .btn-primary,
+  .btn-dark {
+    padding: 13px 22px 11px;
+  }
+}
+
+
+/* ==================================================================
+   15. CLIENTS / PARTNERS
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .clients-logo {
+    min-height: 85px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .partner-logo {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  #partners-carousel .partner-logo {
+    border-right: 0;
+  }
+}
+
+
+/* ==================================================================
+   16. FOOTER
+   ================================================================== */
+
+@media (max-width: 991px) {
+  .footer-main {
+    padding: 50px 0 20px;
+  }
+
+  .footer-widget {
+    margin-bottom: 35px;
+  }
+
+  .footer .widget-title {
+    margin-bottom: 20px;
+  }
+
+  .working-hours {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer-social ul {
+    margin-left: -10px;
+  }
+
+  .footer-social ul li a i {
+    padding: 10px;
+  }
+
+  .copyright {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .copyright .text-right {
+    text-align: center !important;
+    margin-top: 10px;
+  }
+
+  .footer-menu ul {
+    justify-content: center;
+  }
+
+  .footer-menu ul li {
+    padding: 0 8px;
+  }
+}
+
+
+/* ==================================================================
+   17. ERROR PAGE — 200px type overflows every phone
+   ================================================================== */
+
+@media (max-width: 767px) {
+  .error-page .error-code h2 {
+    font-size: 90px;
+    line-height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .error-page .error-body .btn {
+    margin-top: 20px;
+  }
+}
+
+
+/* ==================================================================
+   18. TOUCH & ACCESSIBILITY POLISH
+   ================================================================== */
+
+@media (max-width: 991px) {
+
+  /* Minimum comfortable tap target */
+  .btn,
+  .pagination li a,
+  .top-social ul li a,
+  .footer-social ul li a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #back-to-top.position-fixed {
+    bottom: 15px;
+  }
+}
+
+/* Visible keyboard focus (style.css removes outlines everywhere) */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.form-control:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-detail-img,
+  .shuffle-item .project-img-container img,
+  .project-item img {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ==================================================================
+   19. TRIMAN ENERGY — fixes specific to your markup
+   (added after seeing index / services / about / contact)
+   ================================================================== */
+
+/* 19.1 — The .logo-area row is now empty (everything inside it is
+   commented out), so it only renders a blank white strip. */
+@media (max-width: 991px) {
+  .header-one .logo-area {
+    display: none;
+  }
+}
+
+/* 19.2 — Logo + burger on one line.
+   NOTE: needs the small HTML change described in chat — move the
+   <div class="logo ..."> OUT of #navbar-collapse and place it
+   directly BEFORE the <button class="navbar-toggler">.
+   Right now the logo is inside the collapse, so on a phone the
+   header shows nothing but an orange burger icon. */
+@media (max-width: 991px) {
+  .site-navigation .navbar {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0 !important;
+  }
+
+  .site-navigation .navbar > .logo {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 62%;
+    order: 1;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    text-align: left !important;
+  }
+
+  .site-navigation .navbar > .logo img {
+    height: 46px;
+    width: auto;
+  }
+
+  .site-navigation .navbar-toggler {
+    order: 2;
+    margin: 0;
+  }
+
+  .site-navigation .navbar-collapse {
+    order: 3;
+    flex-basis: 100%;
+  }
+}
+
+/* 19.3 — Video hero.
+   700px tall with object-fit:cover crops a landscape video down to
+   a narrow sliver on a phone. Show the whole frame instead. */
+@media (max-width: 991px) {
+  .banner-carousel .banner-carousel-item.video-banner {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+  }
+
+  .banner-carousel .banner-video {
+    position: relative;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* 19.4 — Top bar: email, phone and four social icons all sit in one
+   <li>, so they run off the edge. Let them wrap as tappable chips. */
+@media (max-width: 767px) {
+  .top-bar .top-social ul li {
+    display: block;
+    line-height: 1.6;
+  }
+
+  .top-bar .top-social ul li a {
+    display: inline-block;
+    padding: 6px 9px;
+    font-size: 13px;
+  }
+
+  .top-bar ul.top-info li p.info-text {
+    display: block;
+  }
+}
+
+/* 19.5 — "What We Do" service rows (icon image + text) */
+@media (max-width: 767px) {
+  .ts-service-box.d-flex {
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .ts-service-box-img {
+    flex: 0 0 auto;
+    margin-right: 15px;
+  }
+
+  .ts-service-box-img img {
+    max-width: 52px;
+  }
+
+  .ts-service-box.d-flex .ts-service-box-info {
+    margin-left: 0;
+  }
+}
+
+/* 19.6 — Facts strip */
+@media (max-width: 767px) {
+  .facts-area .ts-facts {
+    margin-bottom: 25px;
+  }
+
+  .ts-facts-img img {
+    max-width: 62px;
+  }
+
+  .facts-area br {
+    display: none;
+  }
+}
+
+/* 19.7 — Services page: the sidebar sits ABOVE the content here,
+   so it needs bottom spacing, not top. */
+@media (max-width: 991px) {
+  .sidebar.sidebar-left {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .sidebar ul.service-menu li a {
+    padding: 14px 16px;
+    line-height: 22px;
+  }
+}
+
+/* 19.8 — Contact form */
+@media (max-width: 767px) {
+  #contact-form .text-right {
+    text-align: center !important;
+  }
+
+  #contact-form .btn {
+    width: 100%;
+  }
+
+  #contact-form textarea.form-control {
+    min-height: 150px;
+  }
+
+  #contact-form label {
+    margin-bottom: 4px;
+  }
+}
+
+/* 19.9 — Contact info cards */
+@media (max-width: 767px) {
+  .ts-service-box-bg {
+    padding: 20px 15px;
+    margin-bottom: 15px;
+  }
+
+  .ts-service-box-bg .ts-service-icon.icon-round i {
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+/* 19.10 — Product category grid: the inline display:flex your JS
+   sets stays valid, just tighten the spacing on small screens. */
+@media (max-width: 767px) {
+  #category-grid .shuffle-item {
+    margin-bottom: 15px;
+  }
+
+  #project-area br {
+    display: none;
+  }
+
+  .category-detail-back a {
+    display: inline-block;
+    padding: 6px 0;
+  }
+}
+
+/* 19.11 — "Interested with this service" block on the services page */
+@media (max-width: 767px) {
+  .call-to-action.classic {
+    padding: 22px 18px;
+  }
+}

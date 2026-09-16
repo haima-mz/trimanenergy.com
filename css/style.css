@@ -1126,6 +1126,10 @@ ul.navbar-nav > li > a {
   position: relative;
 }
 
+.site-navigation .container .row {
+  margin-left: -194px;
+}
+
 .search-area {
   min-height: 70px;
   padding-right: 0;
