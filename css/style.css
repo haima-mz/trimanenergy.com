@@ -935,6 +935,16 @@ ul.navbar-nav > li {
   top: -4px;
 }
 
+@media (min-width: 992px) {
+  .site-navigation ul.navbar-nav {
+    width: 100%;
+  }
+
+  .site-navigation ul.navbar-nav > li.header-get-a-quote {
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 991px) {
   .header-two ul.navbar-nav > li {
     padding: 0;
