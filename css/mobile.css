@@ -1185,18 +1185,35 @@ button:focus-visible,
   }
 }
 
-/* 19.4 — Top bar: email, phone and four social icons all sit in one
-   <li>, so they run off the edge. Let them wrap as tappable chips. */
+/* 19.4 — Top bar: email, phone and four social icons all sit as six
+   inline <a> tags inside one <li>, so the browser wraps them wherever
+   there happens to be room — icons end up split across lines with
+   the email/phone text. Force: email on its own line, phone on its
+   own line, then all social icons together on the line after. */
 @media (max-width: 767px) {
   .top-bar .top-social ul li {
-    display: block;
-    line-height: 1.6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2px 6px;
   }
 
-  .top-bar .top-social ul li a {
+  /* Email (1st link) and phone (2nd link): each takes the full row */
+  .top-bar .top-social ul li > a:nth-child(1),
+  .top-bar .top-social ul li > a:nth-child(2) {
+    flex: 0 0 100%;
+    display: block;
+    padding: 3px 0;
+    font-size: 13px;
+  }
+
+  /* Social icons (3rd link onward): flow together on their own row */
+  .top-bar .top-social ul li > a:nth-child(n+3) {
+    flex: 0 0 auto;
     display: inline-block;
     padding: 6px 9px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .top-bar ul.top-info li p.info-text {
