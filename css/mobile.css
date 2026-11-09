@@ -1190,7 +1190,20 @@ button:focus-visible,
    there happens to be room — icons end up split across lines with
    the email/phone text. Force: email on its own line, phone on its
    own line, then all social icons together on the line after. */
-@media (max-width: 767px) {
+/* 19.4 — Top bar */
+@media (max-width: 991px) {
+
+  /* Full-width columns on every page, no HTML edits needed */
+  .top-bar .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .top-bar .text-md-left,
+  .top-bar .text-md-right {
+    text-align: center !important;
+  }
+
   .top-bar .top-social ul li {
     display: flex;
     flex-wrap: wrap;
@@ -1199,25 +1212,35 @@ button:focus-visible,
     gap: 2px 6px;
   }
 
-  /* Email (1st link) and phone (2nd link): each takes the full row */
+  /* Phones: email and phone each on their own row */
   .top-bar .top-social ul li > a:nth-child(1),
   .top-bar .top-social ul li > a:nth-child(2) {
     flex: 0 0 100%;
     display: block;
     padding: 3px 0;
     font-size: 13px;
+    min-height: 0;
   }
 
-  /* Social icons (3rd link onward): flow together on their own row */
   .top-bar .top-social ul li > a:nth-child(n+3) {
     flex: 0 0 auto;
     display: inline-block;
     padding: 6px 9px;
     font-size: 14px;
+    min-height: 0;
   }
 
   .top-bar ul.top-info li p.info-text {
     display: block;
+  }
+}
+
+/* Tablets and landscape phones: email, phone and icons share one row */
+@media (min-width: 768px) and (max-width: 991px) {
+  .top-bar .top-social ul li > a:nth-child(1),
+  .top-bar .top-social ul li > a:nth-child(2) {
+    flex: 0 0 auto;
+    padding: 3px 8px;
   }
 }
 
